@@ -2,6 +2,7 @@
 # markdown: kramdown
 theme: jekyll-theme-midnight
 name: Martin's Ramblings
+title: Martin's Ramblings
 description: Where I post development stuff
 url: "https://www.marconcini.dev"
 
