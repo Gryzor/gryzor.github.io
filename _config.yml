@@ -1,3 +1,8 @@
 # name: Martin Marconcini
 # markdown: kramdown
 theme: jekyll-theme-midnight
+name: Martin's Ramblings
+description: Where I post development stuff
+url: "https://www.marconcini.dev"
+
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
