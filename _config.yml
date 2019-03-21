@@ -1,9 +1,11 @@
-# name: Martin Marconcini
-# markdown: kramdown
-theme: jekyll-theme-midnight
-name: Martin's Ramblings
-title: Martin's Ramblings
-description: Where I post development stuff
+theme: jekyll-theme-cayman
+name: The things that shouldn't be
+title: The things that shouldn't be
+# description: Where I post development stuff
 url: "https://www.marconcini.dev"
+
+
+# Midnight Theme exclusive?
+show_downloads: false
 
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
