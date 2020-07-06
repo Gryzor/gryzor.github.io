@@ -1,0 +1,1293 @@
+/*
+* HTML5 Boilerplate
+*
+* What follows is the result of much research on cross-browser styling.
+* Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+* Kroc Camen, and the H5BP dev community and team.
+*/
+
+:root {
+  --background-color: #fff;
+  --content-color: #222;
+  --content-color-meh: #444;
+  --content-color-weak: #888;
+  --content-color-weaky: #aaa;
+  --content-color-weaker: #ddd;
+  --content-color-weakest: #f4f4f4;
+  --accent-color: rgb(28, 180, 220);
+  --accent-color-strong: rgb(16, 140, 170);
+  --accent-color-weak: rgba(28, 180, 220, 0.5);
+  --accent-color-weakest: rgba(28, 180, 220, 0.32);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #222;
+    --content-color: #fff;
+    --content-color-meh: #f4f4f4;
+    --content-color-weak: #ccc;
+    --content-color-weaky: #888;
+    --content-color-weaker: #666;
+    --content-color-weakest: #333;
+    --accent-color: rgb(28, 180, 220);
+    --accent-color-strong: rgb(36, 220, 260);
+    --accent-color-weak: rgba(28, 180, 220, 0.5);
+    --accent-color-weakest: rgba(28, 180, 220, 0.32);
+  }
+}
+
+/* ==========================================================================
+Base styles: opinionated defaults
+========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+  color: var(--content-color);
+}
+
+html {
+  background: var(--background-color);
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+  background: var(--background-color);
+}
+
+/*
+* Remove text-shadow in selection highlight: h5bp.com/i
+* These selection rule sets have to be separate.
+* Customize the background color to match your design.
+*/
+::-moz-selection {
+  background: var(--accent-color-weakest);
+  text-shadow: none;
+}
+::selection {
+  background: var(--accent-color-weakest);
+  text-shadow: none;
+}
+
+/*
+* A better looking default horizontal rule
+*/
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--content-color-weaker);
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+* Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+*/
+img {
+  vertical-align: middle;
+}
+
+/*
+* Remove default fieldset styles.
+*/
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+* Allow only vertical resizing of textareas.
+*/
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+Layout Styles Common to All jaredsinclair dot com Pages
+========================================================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding-top: 100px;
+}
+
+#columns-container {
+  width: 670px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+#sidebar {
+  float: left;
+  width: 130px;
+  text-align: right;
+  margin: 0 100px 0 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+#main {
+  float: left;
+  width: 440px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  clear: both;
+  float: none;
+  width: 440px;
+  margin: 0 0 0 230px;
+  padding: 120px 0 60px 0;
+  text-align: left;
+}
+
+/* ==========================================================================
+Styles Common to All jaredsinclair dot com Pages
+========================================================================== */
+
+html,
+body {
+  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75em;
+  font-weight: 400;
+  -webkit-text-size-adjust: none;
+  text-rendering: optimizeLegibility;
+  color: var(--content-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: 1em;
+  line-height: 1.75em;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--content-color);
+}
+
+b,
+strong {
+  text-rendering: optimizeLegibility;
+  font-weight: 600;
+  color: var(--content-color);
+}
+
+em {
+  font-weight: 400;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: var(--content-color);
+  text-decoration: none;
+}
+
+a:hover {
+  background: var(--content-color-weakest);
+}
+
+blockquote {
+  color: var(--content-color-weak);
+}
+
+blockquote strong,
+blockquote em {
+  color: var(--content-color-weak);
+  font-weight: 600;
+}
+
+blockquote {
+  box-sizing: border-box;
+  border-left: 2px solid var(--content-color-weaker);
+  padding-left: 1em;
+  padding-right: 0;
+  margin: 0 0 1em 0;
+}
+
+ol,
+ul {
+  box-sizing: border-box;
+  margin: 0 0 1em 0;
+  padding: 0 0 0 1em;
+}
+
+.footnotes {
+  font-size: 1em;
+  margin-bottom: 2em;
+  color: var(--content-color-weak);
+}
+
+.footnotes li {
+  margin-bottom: 0.75em;
+}
+
+hr {
+  margin: 2em 0;
+}
+
+.footnotes hr {
+  margin: 1.7em 0;
+}
+
+code {
+  font-size: 0.8em;
+  line-height: 1.41em;
+  color: var(--content-color-meh);
+}
+
+pre {
+  font-size: 0.8em;
+  line-height: 1.41em;
+  color: var(--content-color-meh);
+}
+
+pre code {
+  font-size: 1em;
+  line-height: 1.41em;
+}
+
+code {
+  border: 1px solid var(--content-color-weaker);
+  background-color: var(--content-color-weakest);
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0 4px;
+  vertical-align: baseline;
+  word-break: break-all;
+}
+
+pre code {
+  border: none;
+  background-color: none;
+  display: inline;
+}
+
+pre {
+  border: 1px solid var(--content-color-weaker);
+  background-color: var(--content-color-weakest);
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 14px;
+  margin: 0 0 1.65em -30px;
+  width: 500px;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+/* ==========================================================================
+Tumblr
+========================================================================== */
+
+#tumblr_controls {
+  margin-top: 0;
+}
+
+.tmblr-iframe {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.tmblr-iframe--controls-phone-container {
+  padding-top: 100px !important;
+}
+
+/* ==========================================================================
+Sidebar
+========================================================================== */
+
+#sidebar {
+  text-transform: uppercase;
+}
+
+#sidebar h1 {
+  font-weight: 700;
+  margin-top: 1.5em;
+}
+
+#sidebar h2,
+#sidebar h3,
+#sidebar h4,
+#sidebar h5,
+#sidebar h6,
+#sidebar p {
+  font-weight: 400;
+}
+
+ul#sidebar-list {
+  list-style: none;
+  line-height: 1.75em;
+  margin: 0 0 3.5em 0;
+  padding: 0;
+  width: 100%;
+}
+
+#sidebar-list li {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#sidebar-list li.selected {
+  font-weight: 600;
+  color: var(--content-color);
+}
+
+#sidebar-list a,
+#sidebar-list a:hover,
+#sidebar-list a:visited,
+#sidebar-list a:active {
+  color: var(--content-color-weak);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+#sidebar-list li a:hover {
+  color: var(--content-color);
+}
+
+#sidebar-list li.selected a {
+  color: var(--content-color);
+  padding-right: 4px;
+  border-right: 3px solid var(--content-color);
+}
+
+#sidebar #pixel-avatar {
+  border-radius: 7px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+  width: 128px;
+  height: 128px;
+}
+
+#sidebar a.avatar-link {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ==========================================================================
+Fusion Ads
+========================================================================== */
+
+#fusionads {
+  font-size: 0.75em;
+  line-height: 1.5em;
+  margin-bottom: 128px;
+}
+
+.fusion-wrap {
+  display: block;
+  margin: 0 0 1em 0;
+}
+
+a.fusion-img {
+  display: block;
+  margin: 0 0 1em 0;
+}
+
+a.fusion-img img {
+  width: 100%;
+  max-width: 100%;
+}
+
+a.fusion-text {
+  display: block;
+  width: 160px;
+  margin-left: -30px;
+  text-transform: none;
+}
+
+a.fusion-poweredby {
+  text-transform: none;
+  color: #aaa;
+}
+
+/* ==========================================================================
+Main Column
+========================================================================== */
+
+::selection {
+  background: var(--accent-color-weakest);
+}
+
+#main a,
+#main a:active,
+#main a:visited {
+  color: var(--accent-color);
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent-color-weak);
+}
+
+.image-link-wrapper {
+  border: none !important;
+  background: none !important;
+}
+
+#main a em {
+  font-weight: 600;
+  font-style: italic;
+}
+
+#main a:hover {
+  color: var(--accent-color-strong);
+  border-bottom: 1px solid var(--accent-color-strong);
+}
+
+#main a.syndicate-sponsor-link,
+#main a:active.syndicate-sponsor-link,
+#main a:visited.syndicate-sponsor-link {
+  color: var(--content-color-weak);
+  font-weight: 400;
+  border-bottom: 1px solid var(--content-color-weaker);
+  font-style: italic;
+}
+
+#main a:hover.syndicate-sponsor-link {
+  color: var(--content-color);
+  font-weight: 400;
+  border-bottom: 1px solid var(--content-color-weak);
+  font-style: italic;
+  background: var(--content-color-weakest);
+}
+
+#main h1 a,
+#main h2 a,
+#main h3 a,
+#main h4 a,
+#main h5 a,
+#main h6 a {
+  color: var(--content-color) !important;
+}
+
+#main h1,
+#main h2 {
+  font-weight: 600;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  margin-top: -5px;
+}
+
+#main h1 a,
+#main h2 a,
+#main h1 a:visited,
+#main h2 a:visited,
+#main h1 a:active,
+#main h2 a:active {
+  border-bottom: 1px solid var(--content-color-weaker);
+}
+
+#main h1 a:hover,
+#main h2 a:hover {
+  border-bottom: 1px solid var(--content-color);
+}
+
+#main h3,
+#main h4,
+#main h5,
+#main h6 {
+  margin: 2em auto 1em auto;
+}
+
+#main h3 {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+#main h4 {
+  font-weight: 600;
+  font-style: italic;
+}
+
+#main .date-stamp,
+#main .date-stamp a,
+#main .date-stamp a:hover,
+#main .date-stamp a:visited,
+#main .date-stamp a:active {
+  color: var(--content-color-weaky);
+  text-transform: uppercase;
+  border-bottom: none;
+  font-weight: 400;
+}
+
+#main img {
+  margin: 0 0 1.5em -30px;
+  width: 500px;
+}
+
+#main hr {
+  margin: 4em auto;
+}
+
+#main .footnotes hr {
+  margin: 1.7em 0;
+}
+
+#main .rss-sponsorship-table td {
+  padding-right: 2em;
+}
+
+.screenplay {
+  font-size: 0.8em;
+  font-family: monospace;
+  border: 1px solid var(--content-color-weaker);
+  background-color: var(--content-color-weakest);
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 2em 2em 0em 2em;
+  margin: 0 0 1.65em -30px;
+  width: 500px;
+  color: var(--content-color-meh);
+}
+
+.screenplay p {
+  margin: 0 auto 2em auto;
+}
+
+.screenplay .name {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  color: var(--content-color-meh);
+}
+
+.screenplay .speech {
+  width: 70%;
+  max-width: 320px;
+  margin: 0 auto 2em auto;
+  text-align: left;
+  display: block;
+}
+
+.editors-note {
+  color: var(--content-color-weak);
+}
+
+iframe {
+  width: 600px;
+  max-width: 100%;
+  margin: 1em auto 1.5em auto;
+  text-align: center;
+}
+
+.bordered {
+  box-sizing: border-box;
+  border: 1px solid var(--content-color-weaker);
+}
+
+.archive-year-list {
+  margin-bottom: 3em;
+}
+
+/* ==========================================================================
+Footer
+========================================================================== */
+
+#footer {
+  color: var(--content-color-weaker);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+Popular Items
+========================================================================== */
+
+.popular-item {
+  margin-top: 0.5em;
+  margin-bottom: 4em;
+}
+
+/* ==========================================================================
+Inline Images & Video in Blog Posts
+========================================================================== */
+
+#main p.iphone-screenshot img {
+  margin: 0 auto;
+  width: 320px;
+  max-width: 100%;
+  border: 1px solid var(--content-color-weaker);
+  clear: both;
+  display: block;
+}
+
+#main p.iphone-screenshot {
+  margin: 2em auto;
+  text-align: center;
+  color: var(--content-color-weak);
+  width: 320px;
+  line-height: 1.25em;
+}
+
+#main p.inline-image img {
+  margin: 0 0 0 -60px;
+  width: 500px;
+}
+
+#main p.inline-image img.bordered {
+  margin: 0 0 0 -62px;
+  width: 502px;
+}
+
+#main p.inline-image {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+  color: var(--content-color-weak);
+  width: 500px;
+}
+
+#main p.inline-image small {
+  line-height: 0.75em;
+}
+
+#main .youtube_iframe,
+#main .vimeo-iframe {
+  width: 500px;
+  max-width: none;
+  margin: 1em 0 1.5em -30px;
+}
+
+#main .twitter-tweet-rendered {
+  margin: 1.5em auto 1.5em auto !important;
+}
+
+/* ==========================================================================
+Home Page Welcome Quote
+========================================================================== */
+
+#welcome-wrapper {
+  display: table;
+  width: 100%;
+  height: 444px;
+}
+
+#welcome-wrapper p {
+  display: table-cell;
+  width: 100%;
+  height: 440px;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-style: italic;
+  font-weight: 600;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 30px;
+  border-left: 3px solid var(--content-color-weak);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: var(--content-color-weakest);
+  color: var(--content-color-weak);
+}
+
+/* ==========================================================================
+About Page
+========================================================================== */
+
+#main.about {
+  margin-top: -8px;
+}
+
+#main p.objet img {
+  margin: 0 auto;
+  width: 188px;
+}
+
+#main p.objet {
+  margin-top: 3em;
+  text-align: left;
+  color: var(--content-color);
+}
+
+/* ==========================================================================
+Wide Screens
+========================================================================== */
+
+@media screen and (min-width: 1000px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+
+  #columns-container {
+    width: 770px;
+    margin: 0 auto;
+    padding: 0 100px;
+  }
+
+  #sidebar {
+    margin: 0 100px 0 0;
+  }
+
+  #main {
+    width: 540px;
+  }
+
+  #main p.inline-image img {
+    margin: 0 0 0 -60px;
+    width: 600px;
+  }
+
+  #main p.inline-image img.bordered {
+    margin: 0 0 0 -62px;
+    width: 602px;
+  }
+
+  #main p.inline-image {
+    width: 600px;
+  }
+
+  #main hr {
+    margin: 4em auto;
+  }
+
+  #main .footnotes hr {
+    margin: 1.7em 0;
+  }
+
+  pre {
+    margin: 0 0 1.65em -30px;
+    width: 600px;
+  }
+
+  .screenplay {
+    margin: 0 0 1.65em -30px;
+    width: 600px;
+  }
+
+  #main .youtube_iframe,
+  #main .vimeo-iframe {
+    width: 600px;
+    margin: 1em 0 1.5em -30px;
+  }
+}
+
+/* ==========================================================================
+Medium Screens
+========================================================================== */
+
+@media screen and (max-width: 869px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+
+  #columns-container {
+    width: 640px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
+  #sidebar {
+    margin: 0 70px 0 0;
+  }
+
+  #main p.inline-image {
+    width: 472px;
+  }
+
+  #main p.inline-image img {
+    margin: 0 0 0 -16px;
+    width: 472px;
+  }
+
+  #main p.inline-image img.bordered {
+    margin: 0 0 0 -17px;
+    width: 474px;
+  }
+
+  #main hr {
+    margin: 4em auto;
+  }
+
+  #main .footnotes hr {
+    margin: 1.7em 0;
+  }
+
+  pre {
+    margin: 0 0 1.65em -16px;
+    width: 474px;
+  }
+
+  .screenplay {
+    margin: 0 0 1.65em -16px;
+    width: 474px;
+  }
+
+  #main .youtube_iframe,
+  #main .vimeo-iframe {
+    width: 472px;
+    margin: 1em 0 1.5em -16px;
+  }
+}
+
+/* ==========================================================================
+Smaller Screens
+========================================================================== */
+
+@media screen and (max-width: 759px) {
+  body {
+    padding-top: 2em;
+    font-size: 16px;
+  }
+
+  .tmblr-iframe--controls-phone-container {
+    padding-top: 2em !important;
+  }
+
+  #columns-container {
+    width: 100%;
+    margin: 0 0 4em 0;
+    padding: 0;
+  }
+
+  #sidebar {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin: 0 0 2em 0;
+    padding: 0 30px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  #main {
+    float: left;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 30px;
+  }
+
+  #main hr {
+    margin: 2em auto;
+  }
+
+  #sidebar #pixel-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+  }
+
+  #sidebar h1 {
+    margin: 1em auto 1.5em auto;
+  }
+
+  ul#sidebar-list {
+    width: 100%;
+    margin: 0 auto 1em auto;
+    border-top: 1px solid var(--content-color-weaker);
+    border-bottom: 1px solid var(--content-color-weaker);
+    padding: 1em 0;
+  }
+
+  #sidebar-list li {
+    display: inline;
+    padding: 0 5px;
+  }
+
+  #sidebar-list li.selected a {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 2px solid var(--content-color);
+  }
+
+  #footer {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 2em 30px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.75em;
+  }
+
+  #fusionads {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 260px;
+    border-bottom: 1px solid var(--content-color-weaker);
+    padding: 1em 0 2em 0;
+    color: var(--content-color-weak);
+    font-size: 0.7em;
+  }
+
+  .fusion-wrap {
+    display: block;
+    clear: both;
+    margin: 0 auto;
+    width: 260px;
+  }
+
+  a.fusion-img {
+    display: block;
+    margin: 0 14px 0 0;
+    float: left;
+  }
+
+  a.fusion-img img {
+    width: 130px;
+    height: 100px;
+  }
+
+  a.fusion-text {
+    display: block;
+    float: left;
+    width: 116px;
+    margin: 0 auto;
+    text-transform: none;
+    text-align: left;
+  }
+
+  a.fusion-poweredby {
+    display: block;
+    clear: both;
+    max-width: 320px;
+    margin: 0 auto;
+    text-transform: none;
+    color: var(--content-color-weaker);
+    padding-top: 1em;
+  }
+
+  pre {
+    padding: 30px;
+    margin: 1.65em 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .screenplay {
+    margin: 1.65em 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #main p.inline-image {
+    width: 100%;
+  }
+
+  #main p.inline-image img {
+    margin: 0 auto;
+    width: 100%;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+  }
+
+  #main p.inline-image img.bordered {
+    margin: 0 auto;
+    width: 100%;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    border: none;
+    border-top: 1px solid var(--content-color-weaker);
+    border-bottom: 1px solid var(--content-color-weaker);
+  }
+
+  #main p.inline-image small {
+    font-size: 0.75em;
+    line-height: 0.75em;
+  }
+
+  #main .youtube_iframe,
+  #main .vimeo-iframe {
+    width: 100%;
+    width: calc(100% + 60px);
+    margin: 1em 0 1.5em -30px;
+  }
+
+  #welcome-wrapper {
+    display: table;
+    width: 100%;
+    height: auto;
+  }
+
+  #welcome-wrapper p {
+    height: auto;
+    font-size: 1em;
+  }
+
+  .footnotes {
+    font-size: 1em;
+  }
+}
+
+/* ==========================================================================
+Smallest Screens
+========================================================================== */
+
+@media screen and (max-width: 439px) {
+  body {
+    font-size: 17px;
+  }
+
+  #sidebar {
+    padding: 0 14px;
+  }
+
+  #main {
+    padding: 0 14px;
+  }
+
+  #footer {
+    padding: 2em 14px;
+  }
+
+  pre {
+    padding: 14px;
+  }
+
+  #main p.inline-image {
+    width: 100%;
+  }
+
+  #main p.inline-image img {
+    margin: 0 auto;
+    width: 100%;
+    width: calc(100% + 28px);
+    margin-left: -14px;
+  }
+
+  #main p.inline-image img.bordered {
+    margin: 0 auto;
+    width: 100%;
+    width: calc(100% + 28px);
+    margin-left: -14px;
+  }
+
+  #main .youtube_iframe,
+  #main .vimeo-iframe {
+    width: 100%;
+    width: calc(100% + 28px);
+    margin: 1em 0 1.5em -14px;
+  }
+
+  #main hr {
+    margin: 2em auto;
+  }
+}
+
+/* ==========================================================================
+Helper classes
+========================================================================== */
+
+/*
+* Image replacement
+*/
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/*
+* Hide from both screenreaders and browsers: h5bp.com/u
+*/
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+* Hide only visually, but have it available for screenreaders: h5bp.com/v
+*/
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+* Extends the .visuallyhidden class to allow the element to be focusable
+* when navigated to via the keyboard: h5bp.com/p
+*/
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+* Hide visually and from screenreaders, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+EXAMPLE Media Queries for Responsive Design.
+These examples override the primary ('mobile first') styles.
+Modify as content requires.
+========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+Print styles.
+Inlined to avoid required HTTP connection: h5bp.com/r
+========================================================================== */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+  * Don't show links for images, or javascript/internal links
+  */
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

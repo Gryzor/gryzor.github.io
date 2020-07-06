@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<h2>
+  <a class="post-link" href="{{ post.url | relative_url }}">{{ page.title | escape }}</a>
+</h2>
+{{ content }}
+<p>
+  <span class="date-stamp">|&nbsp;&nbsp;<a href="{{ post.url }}">{{ page.date | date: "%-d %b %Y" }}</a></span>
+</p>
+<br/><br/><br/>
