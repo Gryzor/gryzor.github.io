@@ -13,6 +13,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="supported-color-schemes" content="light dark">
 
+  <!-- FIX RSS URL -->
   <link rel="alternate" type="application/rss+xml" title="Jared Sinclair" href="https://jaredsinclair.com/rss?1"/>
   <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
   <link rel="stylesheet" href="{{ site.url }}/assets/css/normalize.css">
@@ -47,7 +48,6 @@
         {% else %}
         <li><a href="{{ site.url }}/work.html">Work</a></li>
         {% endif %}
-        <!--FIX selected-->
 
         {% if page.navtab == "about" %}
         <li class="selected"><a href="{{ site.url }}/about.html">About</a></li>
