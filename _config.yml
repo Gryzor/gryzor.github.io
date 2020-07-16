@@ -1,8 +1,12 @@
 theme: jekyll-theme-slate
 name: The things that shouldn't be
-title: The things that shouldn't be
-# description: Where I post development stuff
-url: "https://www.marconcini.dev"
+description: This is where I make my opinions public.
+url: "https://marconcini.dev"
 show_downloads: false
 
-exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock, _scripts]
+
+twitter_username: gryzor
+github_username: gryzor
+email: martin@marconcini.dev
+title: Martin Marconcini
