@@ -7,14 +7,16 @@
 */
 
 :root {
-  --background-color: #fff;
+  /*--background-color: #fff;*/
+  --background-color: ##fafaf7;
   --content-color: #222;
   --content-color-meh: #444;
   --content-color-weak: #888;
   --content-color-weaky: #aaa;
   --content-color-weaker: #ddd;
   --content-color-weakest: #f4f4f4;
-  --accent-color: rgb(28, 180, 220);
+  /*--accent-color: rgb(28, 180, 220);*/
+  --accent-color: rgb(70, 160, 220);
   --accent-color-strong: rgb(16, 140, 170);
   --accent-color-weak: rgba(28, 180, 220, 0.5);
   --accent-color-weakest: rgba(28, 180, 220, 0.32);
@@ -22,14 +24,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #222;
+    /*--background-color: #222;*/
+    --background-color: #1B1821;
     --content-color: #fff;
-    --content-color-meh: #f4f4f4;
+    /*--content-color-meh: #f4f4f4;*/
+    --content-color-meh: #d8d8e0;
     --content-color-weak: #ccc;
     --content-color-weaky: #888;
     --content-color-weaker: #666;
-    --content-color-weakest: #333;
-    --accent-color: rgb(28, 180, 220);
+    /*--content-color-weakest: #333;*/
+    --content-color-weakest: #2B2A33;
+    /*--accent-color: rgb(28, 180, 220);*/
+    --accent-color: rgb(70, 160, 220);
     --accent-color-strong: rgb(36, 220, 260);
     --accent-color-weak: rgba(28, 180, 220, 0.5);
     --accent-color-weakest: rgba(28, 180, 220, 0.32);
