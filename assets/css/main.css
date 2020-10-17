@@ -6,6 +6,9 @@
 * Kroc Camen, and the H5BP dev community and team.
 */
 
+/*code formatting style for rouge*/
+@import "default.css";
+
 :root {
   /*--background-color: #fff;*/
   --background-color: ##fafaf7;
