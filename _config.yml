@@ -31,6 +31,7 @@ url: "https://marconcini.dev" # the base hostname & protocol for your site, e.g.
 twitter_username: gryzor
 github_username:  gryzor
 permalink: /:year/:month/:day/:title:output_ext
+show_downloads: false
 
 # Build settings
 markdown: kramdown
@@ -41,7 +42,8 @@ plugins:
 # Exclude from processing.
 exclude:
   - _scripts
-
+  - [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock, _scripts]
+  
   # Site configuration for the Jekyll 3 Pagination Gem
 # The values here represent the defaults if nothing is set
 pagination:
