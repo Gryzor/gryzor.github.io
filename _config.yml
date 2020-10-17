@@ -16,9 +16,16 @@
 title: Martin Marconcini
 email: martin@marconcini.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I've been developing Android apps since 2011.
+  I like to work with smart people who value attention to detail and is willing to teach and learn; I prefer not to be the “smartest person in the room”.
+  I think there should always be early and often communication and not just when things don’t go as planned. I value transparency and openness to discusing any issues when they arise. Having worked in software development for over two decades, I believe the inability to address certain topics in an organization impairs good development at every level.
+  The phrase “Always be improving” is on point; you can’t do the best thing every time, but you can certainly learn from it for the next time. Refactoring is evil, but sometimes needed; rewriting is more often than not a bad idea.
+  "The emperor is not as forgiving as I am”
+
+# Write an awesome description for your new site here. You can edit this
+# line in _config.yml. It will appear in your document head meta (for
+# Google search results) and in your feed.xml site description.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://marconcini.dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gryzor
