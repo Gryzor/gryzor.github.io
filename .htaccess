@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://jaredsinclair.com/$1 [R,L]
+RewriteRule ^(.*)$ https://marconcini.dev/$1 [R,L]
 
 AddHandler php5-script .php
 
@@ -8,29 +8,3 @@ Options +FollowSymLinks
 
 ErrorDocument 404 /404.html
 
-Redirect 301 /unread https://www.goldenhillsoftware.com/unread/
-
-RedirectMatch 301 /post/183871438320.*$ /2019/04/01/unit-testing-is-easier-than-you.html
-RedirectMatch 301 /post/183676881105.*$ /2019/03/24/think-twice-before-downgrading-t.html
-RedirectMatch 301 /post/183568059785.*$ /2019/03/19/ios-app-analytics-a-necessary-ev.html
-RedirectMatch 301 /post/181051061590.*$ /2018/12/12/reference-types-vs-value-types-t.html
-RedirectMatch 301 /post/179083065595.*$ /2018/10/15/til-boy-have-i-been-misusing-scn.html
-RedirectMatch 301 /post/178217523855.*$ /2018/09/18/migrating-to-unified-logging-swi.html
-RedirectMatch 301 /post/176737572155.*$ /2018/08/07/bad-idea-rejection-tokens.html
-RedirectMatch 301 /post/170755067210.*$ /2018/02/11/welcome-home-pod-a-very-short-pl.html
-RedirectMatch 301 /post/170463595025.*$ /2018/02/03/whats-the-deal-with-no-downloads.html
-RedirectMatch 301 /post/165729874190.*$ /2017/09/25/apple-watch-series-3-first-impre.html
-RedirectMatch 301 /post/165559166480.*$ /2017/09/20/get-your-architecture-right-beca.html
-RedirectMatch 301 /post/152672541355.*$ /2016/11/02/how-i-organize-a-swift-file.html
-RedirectMatch 301 /post/152031181765.*$ /2016/10/19/asyncoperations.html
-RedirectMatch 301 /post/149892449150.*$ /2016/09/03/implementing-avassetresourceload.html
-RedirectMatch 301 /post/148230130750.*$ /2016/07/30/how-to-pause-and-resume-your-app.html
-RedirectMatch 301 /post/146940646900.*$ /2016/07/05/the-value-of-grey-thinking.html
-RedirectMatch 301 /post/143876716270.*$ /2016/05/04/rethinking-apple-music.html
-RedirectMatch 301 /post/143486642380.*$ /2016/04/27/a-very-narrow-usage-of-storyboar.html
-RedirectMatch 301 /post/101516521815.*$ /2014/11/01/unread-by-the-numbers.html
-RedirectMatch 301 /post/97725263810.*$ /2014/09/17/good-design-is-a-process-iphones.html
-RedirectMatch 301 /post/97655887470.*$ /2014/09/16/good-design-is-about-process-not.html
-RedirectMatch 301 /post/97230437825.*$ /2014/09/11/unread-is-now-a-supertop-app.html
-RedirectMatch 301 /post/93784230655.*$ /2014/08/04/five-hard-lessons-learned-from-u.html
-RedirectMatch 301 /post/93118460565.*$ /2014/07/28/a-candid-look-at-unreads-first-y.html
