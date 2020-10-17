@@ -101,3 +101,5 @@ pagination:
   # Without file extension
   indexpage: 'index'
   highlighter: rouge
+
+theme: jekyll-theme-slate
