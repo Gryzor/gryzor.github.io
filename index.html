@@ -6,18 +6,16 @@ pagination:
   enabled: true
 ---
 
-<!-- Notice we use paginator.posts, and not 'site.posts' -->
 <ul>
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
     <li>
-      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+      <h4><a href="{{ post.url }}">test: {{ post.title }}</a></h4>
       <p>{{ post.date | date_to_long_string }} </p>
       <p>{{ post.excerpt }}</p>
     </li>
   {% endfor %}
 </ul>
-
-<!-- This is what shows the "Older/Newer" to go to other pages -->
+<!--
 {% if paginator.total_pages > 1 %}
 <ul>
   {% if paginator.previous_page %}
@@ -32,3 +30,4 @@ pagination:
   {% endif %}
 </ul>
 {% endif %}
+-->
