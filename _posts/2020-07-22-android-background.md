@@ -49,19 +49,22 @@ Enough ranting…
 
 **Gradle**: At minimum, you will need (latest version as of April 2018):
 
+```gradle
+dependencies {
+    // Lifecycles only (no ViewModel or LiveData)
+    implementation "android.arch.lifecycle:runtime:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+}
+```
 
-	dependencies {
-	    // Lifecycles only (no ViewModel or LiveData)
-	    implementation "android.arch.lifecycle:runtime:1.1.1"
-	    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
-	}
-	
 *(source: [https://developer.android.com/topic/libraries/architecture/adding-components.html](https://developer.android.com/topic/libraries/architecture/adding-components.html))*
 
 **BUT IT DOES NOT WORK**: *this seems to crash as of April 2018 because the lifecycle Runtime doesn't have some dependency. Instead you will need to (at least until we hear back from Google) use this version instead*:
 
+```gradle
 	implementation "android.arch.lifecycle:extensions:1.1.1"
 	annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+```
 
 The side-effect is that you’re including more code than you need for the purpose of this sample; in practice it may not be an issue if you also rely on other architecture components (ViewData/ViewModels, for example).
 
@@ -69,7 +72,7 @@ The side-effect is that you’re including more code than you need for the purpo
 
 It all starts in `SampleApp`, which extends `Application` and overrides `onCreate()`:
 
-
+```kotlin
 	import android.app.Application
 	import android.arch.lifecycle.ProcessLifecycleOwner
 	
@@ -89,19 +92,24 @@ It all starts in `SampleApp`, which extends `Application` and overrides `onCreat
 	                .addObserver(lifecycleListener)
 	    }
 	}
+```
 	
 
 *What is all this?*
 
 `SampleApp` is just an Android Application, declared in the manifest like:
 
+```xml
 	<application
 	    android:name=".SampleApp"
+```
 
 All the *fun*, happens in the `setupLifecycleListener()` function. Essentially **one line of code**:
 
+```kotlin
 	ProcessLifecycleOwner.get().lifecycle
                 .addObserver(lifecycleListener)
+```
 
 That's all. For real.
 
@@ -129,12 +137,15 @@ The important bits in Google’s Javadocs are:
 
 This is the most important item. The component **will only dispatch the last pause/stop** (and start/resume equivalents). This is what makes it different from a **regular** lifecycle observer. From what I have been reading (the source code), the delay is 700ms.
 
-	static final long TIMEOUT_MS = 700; //mls
+```java
+	static final long TIMEOUT_MS = 700; //milliseconds
+```
 
 It's also why it's called `ProcessLifecycleOwner` and with its name, also come the associated side-effect: If your app has **more than one process**, then you will need to keep track of each process in its own listener.
 
 Speaking of the listener, the actual events are received via the supplied listener: *(how many times can I type listener here before it starts sounding weird)*
 
+```kotlin
 	class SampleLifecycleListener : LifecycleObserver {
 	
 	    @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -147,6 +158,7 @@ Speaking of the listener, the actual events are received via the supplied listen
 	        Log.d("SampleLifecycle", "Moving to background…")
 	    }
 	}
+```
 
 Method names are `anythingYouWantThemToBe()` but keep in mind you need the correct annotations. Since the sample app has only **one process**, then this is fine, we don't need to register more components per process to track them all.
 
@@ -158,6 +170,7 @@ What you do when you get a callback, is entirely up to you. In most cases, since
 
 **Do not add** more responsibilities to the above listener, inject another component into it and set a boolean, for example:
 
+```kotlin
 	class SampleLifecycleListener : LifecycleObserver {
 	
 	    @Inject
@@ -172,10 +185,13 @@ What you do when you get a callback, is entirely up to you. In most cases, since
 	    fun onMoveToBackground() {
 	    }
 	}
+```
 
 That way, your `MyLifecycleInterestedComponent` can expose/deal with the value and *other* components can then inject the same `MyLifecycleInterestedComponent` should they need the same data by doing the same:
 
+```kotlin
 	if (component.appReturnedFromBackground) { // do something }
+```
 
 Who sets the above flag as `false`?
 

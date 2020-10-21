@@ -15,6 +15,7 @@ Here’s what this is all about:
 
 You have an input field of some sort (`EditText`, hello?) The XML Layout usually looks like this: (omitted everything irrelevant to make it simpler)
 
+```xml
 	<android.support.design.widget.TextInputLayout
 	                android:layout_width="match_parent"
 	                android:layout_height="wrap_content"
@@ -28,6 +29,7 @@ You have an input field of some sort (`EditText`, hello?) The XML Layout usually
 	                    android:textColor="@color/color2" />
 	                    
 	</android.support.design.widget.TextInputLayout>
+```
 
 ### First Piece: The Hints
 Hints can appear in two places, depending upon 2 conditions. If the edit text has focus, the hint moves up, so you can type. If the edit text has no focus, then the text’s value will determine where the hint will go: if there is no text, the hint floats where the text will go when you type it, otherwise the hint moves up like when you have focus. Sounds confusing but it makes sense in practice. After all, we're doing all this because we want hints.
@@ -38,28 +40,32 @@ a. *How do I set the color of the “Hint” when the field is empty and has no 
 
 This color is handled by the encompassing `TextInputLayout` (why Android, why?), so you have to set it via XML (or programatically if you're in API 23+) with:
 
+```xml
 	android:textColorHint="@color/…"
-
+```
 b. *How do I set the color of the “Hint” when the field is not empty and has no focus?*
 
 This color is also handled by the `TextInputLayout` just like above, meaning they are the same color, no matter what (I'm sure there's got to be a way to change that for all APIs) or to make them different if you wanted:
 
+```xml
 	android:textColorHint="@color/…"
-
+```
 **UPDATE**: Marco has written about how to set different colors using a ColorStateList which I hadn't thought of. Check his article here: [https://medium.com/@fast3r/this-is-brilliant-martin-thank-you-very-much-6c4a43a65df4](https://medium.com/@fast3r/this-is-brilliant-martin-thank-you-very-much-6c4a43a65df4)
 
 c. *How do I set the color of the “hint” when the field has focus?*
 
 This one is a little bit trickier, because it has to be done via a `textAppearance` on the `TextInputLayout`, not the `EditText`. To add confusion you have to specify the appearance with a line like this (notice the `app`):
 
+```xml
 	app:hintTextAppearance:"@style/…"
-
+```
 But the style you reference, must be a parent of `TextAppearance.AppCompat` and must override `android:textColor`, like so:
 
+```xml
 	<style name="MyAppearance" parent="TextAppearance.AppCompat">
 	    <item name="android:textColor">?attr/colorPrimary</item>
 	</style>
-
+```
 In this case, I’m pointing to the `?attr/colorPrimary` but that is just me. It will use the *Primary Color* of the `Theme` (yes, more confusing than ever).
 
 **DO NOT override `textColorHint` in that appearance, or things won’t look as you expect.**
