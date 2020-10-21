@@ -102,4 +102,4 @@ pagination:
   indexpage: 'index'
   highlighter: rouge
 
-theme: jekyll-theme-slate
+  #theme: jekyll-theme-slate

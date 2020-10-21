@@ -24,6 +24,7 @@ The problem is RTL languages `start/end` flip everything automatically, your mar
 
 To better illustrate the problem, imagine this layout:
 
+```xml
 	<?xml version="1.0" encoding="utf-8"?>
 	<android.support.constraint.ConstraintLayout 
 	  xmlns:android="http://schemas.android.com/apk/res/android"
@@ -50,16 +51,21 @@ To better illustrate the problem, imagine this layout:
 	    app:layout_constraintStart_toEndOf="@id/text_one"
 	    app:layout_constraintTop_toTopOf="parent" />
 	</android.support.constraint.ConstraintLayout>
+```
 
 A simple `ConstraintLayout` that has two `TextView` that are forming a Horizontal Chain, packed.
 
 In a regular LTR language, this looks like this:
 
+{:refdef: style="text-align: center;"}
 ![](/assets/constrainlayout-rtl-image1.png)
+{:refdef}
 
 But when you switch to RTL…
 
+{:refdef: style="text-align: center;"}
 ![](/assets/constrainlayout-rtl-image2.png)
+{:refdef}
 
 ### What happened here?
 
@@ -73,6 +79,7 @@ Until I hear more about Google (see Bug report posted [here](https://issuetracke
 
 It looks like this:
 
+```xml
 	<?xml version="1.0" encoding="utf-8"?>
 	<android.support.constraint.ConstraintLayout 
 	  xmlns:android="http://schemas.android.com/apk/res/android"
@@ -100,6 +107,7 @@ It looks like this:
 	    app:layout_constraintStart_toEndOf="@id/text_one"
 	    app:layout_constraintTop_toTopOf="parent" />
 	</android.support.constraint.ConstraintLayout>
+```
 
 The only addition was `app:layout_constraintHorizontal_chainStyle="packed”` to the second text view (the one that will become **head of the chain** in RTL).
 
