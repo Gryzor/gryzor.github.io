@@ -41,6 +41,11 @@
         <li><a href="{{ site.url }}/">Blog</a></li>
         {% endif %}
 
+        {% if page.navtab == "archive" %}
+        <li class="selected"><a href="{{ site.url }}/archive.html">Archive</a></li>
+        {% else %}
+        <li><a href="{{ site.url }}/archive.html">Archive</a></li>
+        {% endif %}
 
         {% if page.navtab == "work" %}
         <li class="selected"><a href="{{ site.url }}/work.html">Work</a></li>
